@@ -1,5 +1,7 @@
 package Nov16;
 
+//LeetCode question 9
+
 //Determine whether an integer is a palindrome.
 //An integer is a palindrome when it reads the same backward as forward.
 
@@ -34,4 +36,23 @@ public class Palindrome {
         System.out.println(isPalindrome(-121));
     }
 }
+
+//this was the first solution I had in mind.
+//Although I'm not sure if its cheating for me to convert the int to string. 
+//Here is another solution I saw online by someone, really smart solution in my opion, 
+//however, I think my code is easier to understand and thereby saving the readers sometime. 
+
+public boolean isPalindrome(int x) {
+    if (x<0 || (x!=0 && x%10==0)) return false;
+    int rev = 0;
+    while (x>rev){
+    	rev = rev*10 + x%10;
+    	x = x/10;
+    }
+    return (x==rev || x==rev/10);
+}
+
+
+
+
 
